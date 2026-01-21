@@ -17,15 +17,15 @@ namespace CajeroAutomatico
             do
             {
                 Console.Clear();
-                Console.WriteLine("<<<<< CAJERO AUTOMATICO >>>>>");
+                Console.WriteLine("||||| CAJERO AUTOMATICO |||||");
                 Console.WriteLine($"Saldo Actual: ${saldo}");
-                Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
+                Console.WriteLine("|||||||||||||||||||||||||||||");
                 Console.WriteLine("1. Ingreso de efectivo");
                 Console.WriteLine("2. Retiro de efectivo");
                 Console.WriteLine("3. Consulta de saldo");
                 Console.WriteLine("4. Movimientos");
                 Console.WriteLine("5. Salir");
-                Console.WriteLine("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+                Console.WriteLine("||||||||||||||||||||||||||||||");
                 
                 Console.Write("Seleccione una opcion: ");
                 
@@ -77,7 +77,7 @@ namespace CajeroAutomatico
                         break;
 
                     case 2: // retiro de efectivo
-                        Console.Write("\n¿Cuanto desea retirar?: $");
+                        Console.Write("\nCuanto desea retirar?: $");
                         float retiro = float.Parse(Console.ReadLine());
 
                         // posibles errores
@@ -100,11 +100,11 @@ namespace CajeroAutomatico
                         break;
 
                     case 3: // consulta saldo general
-                        Console.WriteLine($"\n>>> SU SALDO DISPONIBLE ES: ${saldo}");
+                        Console.WriteLine($"\n||||| SU SALDO DISPONIBLE ES: ${saldo}|||||");
                         break;
 
                     case 4: // movimientos general
-                        Console.WriteLine("\n>>> HISTORIAL DE MOVIMIENTOS <<<");
+                        Console.WriteLine("\n||||| HISTORIAL DE MOVIMIENTOS |||||");
                         historialMovimientos += $"- Se ha revisado movimientos\n";
                         // see imprime donde se fue guardando
                         Console.WriteLine(historialMovimientos);
