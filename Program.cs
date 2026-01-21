@@ -8,41 +8,16 @@ namespace CajeroAutomatico
         {
             float saldo = 3000; //saldo inicial
             int nipCorrecto = 1234; // nip 
-            string usuarioCorrecto = "Alejandro"; // usuario 
-            
             string historialMovimientos = ""; // guarada todos los movimientos
             historialMovimientos += "- Saldo Inicial: $3000\n"; // guarda saldo inicial
 
             int opcion; // guarda opcion del menu principal
-
-            // inicio sesion
-            Console.Clear();
-            Console.WriteLine("<<<<< BIENVENID@ A BANCO UNACH>>>>>");
-            Console.Write("Ingresa tu usuario: ");
-            string usuarioIngresado = Console.ReadLine();
-
-            Console.Write("Ingresa tu NIP: ");
-            int nipLogin = int.Parse(Console.ReadLine());
-
-            // validar nip y usuario
-            if (usuarioIngresado != usuarioCorrecto || nipLogin != nipCorrecto)
-            {
-                // error de nip y usuario
-                Console.WriteLine("\nError, datos de inicio incorrectos");
-                Console.ReadLine();
-                return; 
-            }
-            
-            Console.WriteLine("\nAcceso concedido, presione una tecla para continuar");
-            Console.ReadLine();
-
 
             // ciclo principal 
             do
             {
                 Console.Clear();
                 Console.WriteLine("<<<<< CAJERO AUTOMATICO >>>>>");
-                Console.WriteLine($"Usuario: {usuarioIngresado}");
                 Console.WriteLine($"Saldo Actual: ${saldo}");
                 Console.WriteLine(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
                 Console.WriteLine("1. Ingreso de efectivo");
@@ -84,7 +59,7 @@ namespace CajeroAutomatico
                 switch (opcion)
                 {
                     case 1: // ingrreso efectivo
-                        Console.Write("\n¿Cuánto desea ingresar?: $");
+                        Console.Write("\nCuanto desea ingresar?: $");
                         float deposito = float.Parse(Console.ReadLine());
 
                         // posibles errores
@@ -94,7 +69,7 @@ namespace CajeroAutomatico
                         }
                         else
                         {
-                            saldo = saldo + deposito; // nuevo saldo
+                            saldo = saldo + deposito; // nuevoo saldo
                             Console.WriteLine("Deposito exitoso");
                             // se guarada mov.
                             historialMovimientos += $"- Deposito: +${deposito} | Saldo: ${saldo}\n";
@@ -102,7 +77,7 @@ namespace CajeroAutomatico
                         break;
 
                     case 2: // retiro de efectivo
-                        Console.Write("\n¿Cuánto desea retirar?: $");
+                        Console.Write("\n¿Cuanto desea retirar?: $");
                         float retiro = float.Parse(Console.ReadLine());
 
                         // posibles errores
@@ -130,7 +105,8 @@ namespace CajeroAutomatico
 
                     case 4: // movimientos general
                         Console.WriteLine("\n>>> HISTORIAL DE MOVIMIENTOS <<<");
-                        // se imprime donde se fue guardando
+                        historialMovimientos += $"- Se ha revisado movimientos\n";
+                        // see imprime donde se fue guardando
                         Console.WriteLine(historialMovimientos);
                         break;
                 }
